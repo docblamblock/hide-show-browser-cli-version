@@ -20,7 +20,7 @@
     
     </center>
 </div>
-<div id=togglePane class=hide >
+<div >
 <iframe id=thing src="http://cork.ie/feeds/proc/tester.php"
     frameborder="0" scrolling="yes"></iframe>
 </div>
@@ -28,14 +28,14 @@
  <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/fastclick.js"></script>
 <script type="text/javascript" src="js/zepto-1.1.6.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
+
 
 
 <script type="text/javascript">
     // Wait for device API libraries to load
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener("deviceready", onDeviceReady2, false);
     // device APIs are available
-    function onDeviceReady() {
+    function onDeviceReady2() {
         alert("device ready event occured");
         navigator.vibrate(3000);
         

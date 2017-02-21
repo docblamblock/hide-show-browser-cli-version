@@ -33,7 +33,14 @@
 
 <script type="text/javascript">
     // Wait for device API libraries to load
-    document.addEventListener("deviceready", onDeviceReady2, false);
+    
+setTimeout(function() {
+        console.log("timeout fired.");
+      document.addEventListener("deviceready", onDeviceReady2, false);
+    },
+    2000);
+
+
     // device APIs are available
     function onDeviceReady2() {
         alert("device ready event occured");

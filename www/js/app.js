@@ -19,6 +19,15 @@ var app = {
             console.log("You are using a brower.");
             alert("browser bah");
             navigator.splashscreen.show();
+            
+            setTimeout(function() {
+        console.log("timeout fired.");
+          navigator.splashscreen.hide();
+    },
+    5000);
+            
+            
+            
         }
 
     }

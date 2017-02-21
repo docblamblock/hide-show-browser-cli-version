@@ -19,7 +19,7 @@ var app = {
             console.log("You are using a brower.");
             alert("browser bah");
             //navigator.splashscreen.show();
-             navigator.vibrate(3000);
+             navigator.vibrate(500);
             
             setTimeout(function() {
         console.log("timeout fired.");

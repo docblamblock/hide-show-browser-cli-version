@@ -17,6 +17,7 @@ var app = {
             alert("android bah");
         } else if (device.platform == 'browser') {
             console.log("You are using a brower.");
+            alert("browser bah");
         }
 
     }

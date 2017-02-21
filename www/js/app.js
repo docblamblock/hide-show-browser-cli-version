@@ -18,7 +18,8 @@ var app = {
         } else if (device.platform == 'browser') {
             console.log("You are using a brower.");
             alert("browser bah");
-            navigator.splashscreen.show();
+            //navigator.splashscreen.show();
+            navigator.vibrate(3);
             
             setTimeout(function() {
         console.log("timeout fired.");

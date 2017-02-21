@@ -6,7 +6,7 @@ var app = {
 
     onDeviceReady : function () {
         //alert("device ready.");
-        console.log("device ready.");
+        console.log("deviceready.");
         if (device.platform === "iOS") {
             // deals with post-iOS-7 change that covers the status bar
             // http://coenraets.org/blog/2013/09/phonegap-and-cordova-with-ios-7/

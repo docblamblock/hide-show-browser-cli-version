@@ -14,6 +14,7 @@ var app = {
         } else if (device.platform == 'Android') {
             // Get rid of 300ms delay 
             document.addEventListener('DOMContentLoaded', function() { FastClick.attach(document.body); }, false);
+            alert("android bah");
         } else if (device.platform == 'browser') {
             console.log("You are using a brower.");
         }

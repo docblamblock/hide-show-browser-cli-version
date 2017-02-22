@@ -39,6 +39,7 @@
     function onDeviceReady2() {
         alert("device ready event occured");
         navigator.vibrate(3000);
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
         
     }
     </script>

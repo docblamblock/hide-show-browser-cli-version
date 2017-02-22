@@ -17,9 +17,9 @@ var app = {
             alert("android bah");
         } else if (device.platform == 'browser') {
             console.log("You are using a brower.");
-            alert("browser bah");
+            //alert("browser bah");
             //navigator.splashscreen.show();
-             navigator.vibrate(500);
+             //navigator.vibrate(500);
             
             setTimeout(function() {
         console.log("timeout fired.");
@@ -73,3 +73,24 @@ $('#vibrate').on('click', function() {
     navigator.vibrate(500);
     alert("vibrate");
 });
+
+
+var onSuccess = function(position) {
+        alert('Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude         + '\n' +
+              'Altitude: '          + position.coords.altitude          + '\n' +
+              'Accuracy: '          + position.coords.accuracy          + '\n' +
+              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+              'Heading: '           + position.coords.heading           + '\n' +
+              'Speed: '             + position.coords.speed             + '\n' +
+              'Timestamp: '         + position.timestamp                + '\n');
+    };
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
+
+    

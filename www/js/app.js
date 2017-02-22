@@ -70,6 +70,6 @@ $('#toggle').on('click', function() {
 
 $('#vibrate').on('click', function() {
     console.log("isVisible:" + isVisible );
-    navigator.vibrate(3);
+    navigator.vibrate(500);
     alert("vibrate");
 });

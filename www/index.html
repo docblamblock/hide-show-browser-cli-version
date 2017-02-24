@@ -3,110 +3,34 @@
 <head>
     <meta http-equiv=content-type content="text/html; charset=utf8">
     <title>Show and Hide iframe</title>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width" /> 
     
-    <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-    
+    <!------  this meta line is preventing popups and js functions from firing
     <meta http-equiv="Content-Security-Policy" 
              content="default-src *;
                       style-src 'self'; 
                       script-src 'self';" />
+                      
+                      --->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+ 
+   
+
+   
+   
+   </script>
+   
+                   
     <link rel="stylesheet" type="text/css" href="css/default.css">
-
-<style>
-
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    padding-top: 10%;
-}
-
-#map{
-    width: 100%;
-    height: 80%;
-}
-
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-}
-
-
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
-
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
-
-
-</style>
-    
 </head>
-<body>
+
+
+
+<body onload='getMapLocation();'>
+
+
+
 <div class="border bgc">
     <center>
     <h2>Show/Hide iframe</h2>
@@ -114,27 +38,50 @@ h1 {
     
     <button id=vibrate >vibrate</button>
     
-    </center>
+    <button id='geolocate'>geolocate</button>
     
-    <button id = "getPosition">CURRENT POSITION</button>
-<button id = "watchPosition">WATCH POSITION</button>
+    <a href='' onClick='getMapLocation();'>Clicker</a>
+
     
+
+
+    </center> 
 </div>
 
+<div id="tester">sdfdsf</div> 
 
-<div id="map">this map
+
+<div id="map" style="text-align: center; margin: 0 auto; float: center; width:320px; height:300px; padding-bottom: 0px; margin-bottom: 0px;" align="center"></div>
+ 
 
 </div>
 
+<div>
 
+
+</div>
+
+<div id=togglePane class=hide >
+<iframe id=thing src="http://cork.ie/feeds/proc/tester.php"
+    frameborder="0" scrolling="yes"></iframe>
+</div>
 
  <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript" src="js/zepto-1.1.6.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>  <!---- be wide of where this goes in the file, if its loaded too early functions dont know what to do>
 
-<script type="text/javascript" src="js/app.js"></script>
 
- <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBv-8s9BueHeBXEL2emdJe3qiIUlS3NLYM'></script>
-
-
+<script type="text/javascript">
+    // Wait for device API libraries to load
+    document.addEventListener("deviceready", onDeviceReady, false);
+    // device APIs are available
+    function onDeviceReady() {
+        alert("device ready event occured");
+        navigator.vibrate(3000); 
+        
+    }
+    </script>
 
 </body>
 </html>

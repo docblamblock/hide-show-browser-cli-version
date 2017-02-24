@@ -12,8 +12,8 @@
                       script-src 'self';" />
                       
                       --->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-   <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+   
+   <script src='js/app.js'></script>
  
    
 
@@ -29,63 +29,8 @@
 
 <body onload=';'>
 
-
-
-<div class="border bgc">
-    <center>
-    <h2>Show/Hide iframe</h2>
-    <button id=toggle >toggle</button>
-    
-    <button id=vibrate >vibrate</button>
-    
-    <button id='geolocate'>geolocate</button>
-    
-    <a href='' onClick='getMapLocation();'>Clicker</a>
-
-    
-
-
-    </center> 
-</div>
-
-<div id="tester">sdfdsf</div> 
-
-
-<div id="map" style="text-align: center; margin: 0 auto; float: center; width:320px; height:300px; padding-bottom: 0px; margin-bottom: 0px;" align="center"></div>
- 
-
-</div>
-
-<div>
-
-
-</div>
-
-<div id=togglePane class=hide >
-<iframe id=thing src="http://cork.ie/feeds/proc/tester.php"
-    frameborder="0" scrolling="yes"></iframe>
-</div>
-
-
-  <script type="text/javascript" src="js/app.js"></script>  <!---- be wide of where this goes in the file, if its loaded too early functions dont know what to do>
-
-<script type="text/javascript">
-document.addEventListener("deviceready", yourCallbackFunction, false);
-</script>
-
-
-<script type="text/javascript">
-    // Wait for device API libraries to load
-    document.addEventListener("deviceready", getMapLocation(), false);
-    
-    // device APIs are available
-    function onDeviceReady() {
-        alert("device ready event occured");
-        navigator.vibrate(3000);
-        getMapLocation(); 
-        
-    }
-    </script>
+<p><button onclick="geoFindMe()">Show my location</button></p>
+<div id="out"></div>
 
 </body>
 </html>

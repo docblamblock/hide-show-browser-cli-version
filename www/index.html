@@ -3,34 +3,57 @@
 <head>
     <meta http-equiv=content-type content="text/html; charset=utf8">
     <title>Show and Hide iframe</title>
-    <meta name="viewport" content="width=device-width" /> 
-    
-    <!------  this meta line is preventing popups and js functions from firing
+    <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Security-Policy" 
              content="default-src *;
                       style-src 'self'; 
                       script-src 'self';" />
-                      
-                      --->
-   
-   <script src='js/app.js'></script>
-   <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-   
-
-   
-   
-   </script>
-   
-                   
     <link rel="stylesheet" type="text/css" href="css/default.css">
+    
 </head>
+<body>
+<div class="border bgc">
+    <center>
+    <h2>Show/Hide iframe</h2>
+    <button id=toggle >toggle</button>
+    
+    <button id=vibrate >vibrate</button>
+    
+    </center>
+    
+    <button id = "getPosition">CURRENT POSITION</button>
+<button id = "watchPosition">WATCH POSITION</button>
+    
+</div>
+
+
+<div id="map">
+
+</div>
+
+<div id=togglePane class=hide >
+<iframe id=thing src="http://cork.ie/feeds/proc/tester.php"
+    frameborder="0" scrolling="yes"></iframe>
+</div>
+ <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+ <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript" src="js/zepto-1.1.6.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
 
 
 
-<body onload=';'>
-
-<p><button onclick="geoFindMe()">Show my location</button></p>
-<div id="out"></div>
+<script type="text/javascript">
+    // Wait for device API libraries to load
+    document.addEventListener("deviceready", onDeviceReady2, false);
+    // device APIs are available
+    function onDeviceReady2() {
+        alert("device ready event occured");
+        navigator.vibrate(3000);
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        
+    }
+    </script>
 
 </body>
 </html>

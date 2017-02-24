@@ -40,14 +40,8 @@
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
     <plugin name="cordova-plugin-geolocation" />
-    <plugin name="cordova-plugin-googlemaps" />
     
     
-    
-     
-    <param name="AIzaSyB8rV1l8FTlfRXfPLR5HJ5Ev2sDJ-MqLKk" value="xyz" />
- 
-
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
@@ -90,7 +84,6 @@
         <!-- WHITELIST * WHITELIST * WHITELIST -->
         <!-- https://github.com/jessemonroy650/top-phonegap-mistakes/blob/master/the-whitelist-system.md -->
         <allow-navigation href="http://cork.ie/" />
-        <allow-navigation href="http://googleapis.com/" />
         <allow-navigation href="http://cordova.apache.org/" />
         <allow-navigation href="https://slack.cordova.io" />
         <allow-navigation href="http://www.google-analytics.com/" />

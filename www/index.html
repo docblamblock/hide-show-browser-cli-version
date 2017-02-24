@@ -27,7 +27,7 @@
 
 
 
-<body onload='getMapLocation();'>
+<body onload=';'>
 
 
 
@@ -66,19 +66,23 @@
     frameborder="0" scrolling="yes"></iframe>
 </div>
 
- <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/fastclick.js"></script>
-<script type="text/javascript" src="js/zepto-1.1.6.js"></script>
+
   <script type="text/javascript" src="js/app.js"></script>  <!---- be wide of where this goes in the file, if its loaded too early functions dont know what to do>
+
+<script type="text/javascript">
+document.addEventListener("deviceready", yourCallbackFunction, false);
+</script>
 
 
 <script type="text/javascript">
     // Wait for device API libraries to load
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener("deviceready", getMapLocation(), false);
+    
     // device APIs are available
     function onDeviceReady() {
         alert("device ready event occured");
-        navigator.vibrate(3000); 
+        navigator.vibrate(3000);
+        getMapLocation(); 
         
     }
     </script>
